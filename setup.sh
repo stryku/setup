@@ -15,6 +15,10 @@ function decode {
     echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 }
 
+MY_USER_NAME=$(ls /home | head -n 1 | awk '{print $1}')
+MY_HOME=/home/$MY_USER_NAME/
+
+
 # figlet
 apt install figlet -y
 
@@ -69,10 +73,10 @@ apt install zsh -y
 # And restore old file after.
 cp /etc/pam.d/chsh /etc/pam.d/chsh.backup
 sed -i "s/auth\s+required\s+pam_shells.so/auth sufficient pam_shells.so/g" /etc/pam.d/chsh
-chsh -s $(which zsh) $(ls /home | head -n 1 | awk '{print $1}')
+chsh -s $(which zsh) $MY_USER_NAME
 mv /etc/pam.d/chsh.backup /etc/pam.d/chsh
 
-cp files/.zshrc ~/
+cp files/.zshrc $MY_HOME
 
 # VS Code
 figlet VS Code
