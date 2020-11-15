@@ -107,5 +107,5 @@ apt install ffmpeg -y
 
 # OBS
 figlet OBS
-add-apt-repository ppa:obsproject/obs-studio 
+add-apt-repository ppa:obsproject/obs-studio -y
 apt install obs-studio -y
