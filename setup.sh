@@ -17,8 +17,11 @@ function decode {
     echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 }
 
-apt update && apt upgrade -y
+# Go to a temp dir
+cd $(mktemp -d)
 
+# 
+apt update && apt upgrade -y
 
 # Git
 apt install git -y
@@ -44,5 +47,15 @@ git config --global alias.rsweep "remote update origin --prune"
 git config --global alias.tl "tag --list"
 git config --global alias.com "checkout master"
 
+# Clone the setup repo
+git clone https://github.com/stryku/setup && cd setup
+
 # Vim
 apt install vim -y
+cp files/.viminfo ~/
+
+# Zsh
+apt install zsh
+chsh -s $(which zsh)
+cp files/.zshrc ~/
+
