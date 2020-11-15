@@ -53,7 +53,7 @@ apt install vim -y
 cp files/.viminfo ~/
 
 # Zsh
-apt install zsh
+apt install zsh -y
 chsh -s $(which zsh)
 cp files/.zshrc ~/
 
