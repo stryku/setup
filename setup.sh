@@ -57,7 +57,15 @@ cp files/.viminfo ~/
 
 # Zsh
 apt install zsh -y
+
+# Change entry in /etc/pam.d/chsh to make chsh to not ask for password.
+# And restore old file after.
+cp /etc/pam.d/chsh /etc/pam.d/chsh.backup
+sed -i "s/auth\s+required\s+pam_shells.so/auth sufficient pam_shells.so/g" /etc/pam.d/chsh
 chsh -s $(which zsh)
+mv /etc/pam.d/chsh.backup /etc/pam.d/chsh
+rm /etc/pam.d/chsh.backup
+
 cp files/.zshrc ~/
 
 # VS Code
