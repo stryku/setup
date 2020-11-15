@@ -77,7 +77,7 @@ chsh -s $(which zsh) $MY_USER_NAME
 mv /etc/pam.d/chsh.backup /etc/pam.d/chsh
 
 figlet Oh My Zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "yes | $(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 figlet .zshrc
 cp files/.zshrc $MY_HOME/.zshrc
