@@ -7,7 +7,6 @@
 # remove firefox
 # VLC
 # Spotify
-# gimp
 
 # Fail on error
 set -e
@@ -109,5 +108,12 @@ apt install ffmpeg -y
 figlet OBS
 add-apt-repository ppa:obsproject/obs-studio -y
 apt install obs-studio -y
+
+# Spotify
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
+apt update
+apt install spotify-client -y
+
 
 # timeshift --yes --restore --snapshot "$(sudo timeshift --list | tail -n 2 | head -n 1 | awk '{print \$3}')"
