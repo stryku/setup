@@ -69,7 +69,7 @@ apt install zsh -y
 # And restore old file after.
 cp /etc/pam.d/chsh /etc/pam.d/chsh.backup
 sed -i "s/auth\s+required\s+pam_shells.so/auth sufficient pam_shells.so/g" /etc/pam.d/chsh
-chsh -s $(which zsh)
+chsh -s $(which zsh) $(ls /home | head -n 1 | awk '{print $1}')
 mv /etc/pam.d/chsh.backup /etc/pam.d/chsh
 
 cp files/.zshrc ~/
