@@ -76,6 +76,10 @@ sed -i "s/auth\s+required\s+pam_shells.so/auth sufficient pam_shells.so/g" /etc/
 chsh -s $(which zsh) $MY_USER_NAME
 mv /etc/pam.d/chsh.backup /etc/pam.d/chsh
 
+figlet Oh My Zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+figlet .zshrc
 cp files/.zshrc $MY_HOME/.zshrc
 
 # VS Code
@@ -119,4 +123,4 @@ apt update
 apt install spotify-client -y
 
 
-# timeshift --yes --restore --snapshot "$(sudo timeshift --list | tail -n 2 | head -n 1 | awk '{print \$3}')"
+# timeshift --yes --restore --snapshot "$(sudo timeshift --list | tail -n 2 | head -n 1 | awk '{print $3}')"
