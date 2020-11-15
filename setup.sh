@@ -16,13 +16,19 @@ function decode {
     echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 }
 
+# figlet
+apt install figlet -y
+
 # Go to a temp dir
 cd $(mktemp -d)
 
 # Remove firefox
+figlet remove firefox
 apt purge firefox -y
 
 # Git
+figlet git
+
 apt install git -y
 git config --global user.email "$(decode \"fgelxh2393@tznvy.pbz\")"
 git config --global user.name "stryku"
@@ -52,10 +58,12 @@ apt install gitk -y
 git clone https://github.com/stryku/setup && cd setup
 
 # Vim
+figlet vim
 apt install vim -y
 cp files/.viminfo ~/
 
 # Zsh
+figlet zsh
 apt install zsh -y
 
 # Change entry in /etc/pam.d/chsh to make chsh to not ask for password.
@@ -69,6 +77,7 @@ rm /etc/pam.d/chsh.backup
 cp files/.zshrc ~/
 
 # VS Code
+figlet VS Code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -77,12 +86,15 @@ apt-get update
 apt-get install code -y
 
 # KeePassXC
+figlet KeePassXC
 apt install keepassxc -y
 
 # DoubleCommander
+figlet DoubleCommander
 apt install doublecmd-qt -y
 
 # Brave
+figlet Brave
 apt install apt-transport-https curl gnupg -y
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -90,8 +102,10 @@ apt update
 apt install brave-browser -y
 
 # FFmpeg
+figlet FFmpeg
 apt install ffmpeg -y
 
 # OBS
+figlet OBS
 add-apt-repository ppa:obsproject/obs-studio 
 apt install obs-studio -y
