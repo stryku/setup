@@ -16,7 +16,7 @@ function decode {
 }
 
 MY_USER_NAME=$(ls /home | head -n 1 | awk '{print $1}')
-MY_HOME=/home/$MY_USER_NAME/
+MY_HOME=/home/$MY_USER_NAME
 
 
 # figlet
@@ -63,7 +63,7 @@ git clone https://github.com/stryku/setup && cd setup
 # Vim
 figlet vim
 apt install vim -y
-cp files/.viminfo ~/
+cp files/.viminfo $MY_HOME/.zshrc
 
 # Zsh
 figlet zsh
@@ -76,7 +76,7 @@ sed -i "s/auth\s+required\s+pam_shells.so/auth sufficient pam_shells.so/g" /etc/
 chsh -s $(which zsh) $MY_USER_NAME
 mv /etc/pam.d/chsh.backup /etc/pam.d/chsh
 
-cp files/.zshrc $MY_HOME
+cp files/.zshrc $MY_HOME/.zshrc
 
 # VS Code
 figlet VS Code
