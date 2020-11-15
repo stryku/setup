@@ -3,7 +3,6 @@
 # TODO:
 # brave
 # vs code
-# vim
 # virtualbox
 # docker
 # keepassxc
@@ -58,4 +57,12 @@ cp files/.viminfo ~/
 apt install zsh
 chsh -s $(which zsh)
 cp files/.zshrc ~/
+
+# VS Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+apt-get install apt-transport-https -y
+apt-get update
+apt-get install code -y
 
