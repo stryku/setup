@@ -11,7 +11,9 @@ cp files/.viminfo $MY_HOME/.viminfo
 
 # Zsh
 figlet Oh My Zsh
-sh -c "yes | $(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+wget -O oh-my-zsh-install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+chmod +x oh-my-zsh-install.sh
+./oh-my-zsh-install.sh --skip-chsh
 
 figlet .zshrc
 cp files/.zshrc $MY_HOME/.zshrc
