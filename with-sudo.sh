@@ -8,10 +8,6 @@
 # Fail on error
 set -e
 
-function decode {
-    echo "$1" | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
-}
-
 MY_USER_NAME=$(ls /home | head -n 1 | awk '{print $1}')
 MY_HOME=/home/$MY_USER_NAME
 
@@ -27,49 +23,22 @@ figlet remove firefox
 apt purge firefox -y
 
 
-# Git
-figlet git
-
-apt install git -y
-git config --global user.email "$(decode \"fgelxh2393@tznvy.pbz\")"
-git config --global user.name "stryku"
-
-git config --global alias.cm "commit -v -m"
-git config --global alias.co "checkout"
-git config --global alias.cb "checkout -b"
-git config --global alias.aa "add --all ."
-git config --global alias.st "status"
-git config --global alias.last "log -1 HEAD"
-git config --global alias.df "diff"
-git config --global alias.ba "branch -a"
-git config --global alias.bd "branch -d"
-git config --global alias.mnf "merge --no-ff"
-git config --global alias.addtl "commit --amend -C HEAD"
-git config --global alias.ri "rebase -i"
-git config --global alias.fp "fetch -p"
-git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-git config --global alias.cmcount "rev-list --all --count"
-git config --global alias.rsweep "remote update origin --prune"
-git config --global alias.tl "tag --list"
-git config --global alias.com "checkout master"
-
-apt install gitk -y
+# Easy installs
+figlet Easy installs
+apt install -y \
+    git \
+    gitk \
+    vim \
+    zsh \
+    keepassxc \
+    doublecmd-qt \
+    ffmpeg \
+    vlc \
+    virtualbox \
 
 
-# Clone the setup repo
-git clone https://github.com/stryku/setup && cd setup
-
-
-# Vim
-figlet vim
-apt install vim -y
-
-
-# Zsh
-figlet zsh
-apt install zsh -y
-
-
+# Setup Zsh
+figlet Setup Zsh
 # Change entry in /etc/pam.d/chsh to make chsh to not ask for password.
 # And restore old file after.
 cp /etc/pam.d/chsh /etc/pam.d/chsh.backup
@@ -88,16 +57,6 @@ apt-get update
 apt-get install code -y
 
 
-# KeePassXC
-figlet KeePassXC
-apt install keepassxc -y
-
-
-# DoubleCommander
-figlet DoubleCommander
-apt install doublecmd-qt -y
-
-
 # Brave
 figlet Brave
 apt install apt-transport-https curl gnupg -y
@@ -105,11 +64,6 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 apt update
 apt install brave-browser -y
-
-
-# FFmpeg
-figlet FFmpeg
-apt install ffmpeg -y
 
 
 # OBS
@@ -129,14 +83,6 @@ apt install spotify-client -y
 add-apt-repository ppa:deadsnakes/ppa -y
 apt update
 apt install python3.9 -y
-
-
-# VLC
-apt install vlc -y
-
-
-# VirtualBox
-apt install virtualbox
 
 
 figlet with-sudo done
