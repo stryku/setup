@@ -20,8 +20,8 @@ chmod +x with-sudo.sh
 wget -O without-sudo.sh https://raw.githubusercontent.com/stryku/setup/master/without-sudo.sh
 chmod +x without-sudo.sh
 
-sudo with-sudo.sh
-without-sudo.sh
+sudo ./with-sudo.sh
+./without-sudo.sh
 
 
 
