@@ -4,7 +4,6 @@
 # virtualbox
 # docker
 # filezilla
-# VLC
 
 # Fail on error
 set -e
@@ -130,6 +129,10 @@ apt install spotify-client -y
 add-apt-repository ppa:deadsnakes/ppa -y
 apt update
 apt install python3.9 -y
+
+
+# VLC
+apt install vlc -y
 
 
 figlet with-sudo done
