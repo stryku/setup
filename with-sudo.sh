@@ -20,6 +20,8 @@ MY_HOME=/home/$MY_USER_NAME
 # figlet
 apt install figlet -y
 
+figlet with-sudo begin
+
 
 # Remove firefox
 figlet remove firefox
@@ -129,4 +131,5 @@ add-apt-repository ppa:deadsnakes/ppa -y
 apt update
 apt install python3.9 -y
 
-# timeshift --yes --restore --snapshot "$(sudo timeshift --list | tail -n 2 | head -n 1 | awk '{print $3}')"
+
+figlet with-sudo done
