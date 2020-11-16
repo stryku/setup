@@ -135,4 +135,8 @@ apt install python3.9 -y
 apt install vlc -y
 
 
+# VirtualBox
+apt install virtualbox
+
+
 figlet with-sudo done
