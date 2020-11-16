@@ -22,12 +22,15 @@ MY_HOME=/home/$MY_USER_NAME
 # figlet
 apt install figlet -y
 
+
 # Go to a temp dir
 cd $(mktemp -d)
+
 
 # Remove firefox
 figlet remove firefox
 apt purge firefox -y
+
 
 # Git
 figlet git
@@ -57,17 +60,21 @@ git config --global alias.com "checkout master"
 
 apt install gitk -y
 
+
 # Clone the setup repo
 git clone https://github.com/stryku/setup && cd setup
+
 
 # Vim
 figlet vim
 apt install vim -y
 cp files/.viminfo $MY_HOME/.zshrc
 
+
 # Zsh
 figlet zsh
 apt install zsh -y
+
 
 # Change entry in /etc/pam.d/chsh to make chsh to not ask for password.
 # And restore old file after.
@@ -82,6 +89,7 @@ sh -c "yes | $(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 figlet .zshrc
 cp files/.zshrc $MY_HOME/.zshrc
 
+
 # VS Code
 figlet VS Code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -91,13 +99,16 @@ apt-get install apt-transport-https
 apt-get update
 apt-get install code -y
 
+
 # KeePassXC
 figlet KeePassXC
 apt install keepassxc -y
 
+
 # DoubleCommander
 figlet DoubleCommander
 apt install doublecmd-qt -y
+
 
 # Brave
 figlet Brave
@@ -107,14 +118,17 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 apt update
 apt install brave-browser -y
 
+
 # FFmpeg
 figlet FFmpeg
 apt install ffmpeg -y
+
 
 # OBS
 figlet OBS
 add-apt-repository ppa:obsproject/obs-studio -y
 apt install obs-studio -y
+
 
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | apt-key add - 
@@ -122,5 +136,10 @@ echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.
 apt update
 apt install spotify-client -y
 
+
+# Python 3.9
+add-apt-repository ppa:deadsnakes/ppa -y
+apt update
+apt install python3.9 -y
 
 # timeshift --yes --restore --snapshot "$(sudo timeshift --list | tail -n 2 | head -n 1 | awk '{print $3}')"
