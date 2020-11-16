@@ -18,8 +18,10 @@ figlet without-sudo begin
 # Setup Git
 figlet setup Git
 
+git config --global core.pager cat
 git config --global user.email "$(decode \"fgelxh2393@tznvy.pbz\")"
 git config --global user.name "stryku"
+
 git config --global alias.cm "commit -v -m"
 git config --global alias.co "checkout"
 git config --global alias.cb "checkout -b"
@@ -36,7 +38,7 @@ git config --global alias.fp "fetch -p"
 git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 git config --global alias.cmcount "rev-list --all --count"
 git config --global alias.rsweep "remote update origin --prune"
-git config --global alias.tl "tag --list"
+git config --global alias.tl "tag --list --sort=creatordate"
 git config --global alias.com "checkout master"
 
 
@@ -71,12 +73,18 @@ tar -xzf $PYCHARM_FILE -C $PYCHARM_DIR
 echo "#\!/bin/bash \ncd ${PYCHARM_DIR}/${PYCHARM_NAME}/bin && ./pycharm.sh" > ~/bin/pycharm
 
 
+# Python virtualenvs
+mkdir -p ~/my/programming/py/venvs
+
+
+
 # Folders structure
 figlet folders
 mkdir -p \
     ~/my/kp \
     ~/my/programming \
-    ~/my/tmp
+    ~/my/tmp \
+
 
 
 figlet without-sudo done

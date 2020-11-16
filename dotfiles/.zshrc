@@ -101,3 +101,4 @@ source $ZSH/oh-my-zsh.sh
 alias timeshift-to-last="timeshift --yes --restore --snapshot \"$(sudo timeshift --list | tail -n 2 | head -n 1 | awk '{print \$3}')\""
 
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin/dziadzia

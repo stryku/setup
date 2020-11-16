@@ -35,6 +35,7 @@ apt install -y \
     ffmpeg \
     vlc \
     virtualbox \
+    libasound2-dev \
 
 
 # Setup Zsh
@@ -82,7 +83,15 @@ apt install spotify-client -y
 # Python 3.9
 add-apt-repository ppa:deadsnakes/ppa -y
 apt update
-apt install python3.9 -y
+apt install -y \
+    python3.9 \
+    python3.9-venv \
+    python3.9-dev \
+
+apt install python3-alsaaudio
+wget https://bootstrap.pypa.io/get-pip.py
+python3.9 get-pip.py
+
 
 
 figlet with-sudo done
