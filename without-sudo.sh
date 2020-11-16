@@ -20,6 +20,20 @@ figlet dotfiles
 cp dotfiles/* ~/
 
 
+# Create bin dir
+mkdir -p ~/bin
+
+
+# PyCharm
+PYCHARM_NAME=pycharm-community-2020.2.3
+PYCHARM_FILE=$PYCHARM_NAME.tar.gz
+PYCHARM_DIR=~/programs/pycharm
+mkdir -p $PYCHARM_DIR
+wget https://download.jetbrains.com/python/$PYCHARM_FILE
+tar -xzf $PYCHARM_FILE -C $PYCHARM_DIR
+echo "#\!/bin/bash \ncd ${PYCHARM_DIR}/${PYCHARM_NAME}/bin && ./pycharm.sh" > ~/bin/pycharm
+
+
 # Folders structure
 figlet folders
 mkdir -p \
