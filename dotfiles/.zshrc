@@ -102,3 +102,11 @@ alias timeshift-to-last="timeshift --yes --restore --snapshot \"$(sudo timeshift
 
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/bin/dziadzia
+
+function cdtmp {
+    cd $(mktemp -d)
+}
+
+function mkcd {
+    mkdir $1 && cd $1
+}
