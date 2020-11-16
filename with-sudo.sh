@@ -76,6 +76,7 @@ apt install obs-studio -y
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
 apt update
 apt install spotify-client -y
 
@@ -92,6 +93,20 @@ apt install python3-alsaaudio
 wget https://bootstrap.pypa.io/get-pip.py
 python3.9 get-pip.py
 
+
+# Docker
+apt install -y \
+    apt-transport-https
+    ca-certificates
+    curl
+    gnupg-agent
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$UBUNTU_CODENAME") stable" -y
+apt update
+apt install docker-ce -y
+usermod -aG docker $MY_USER_NAME
 
 
 figlet with-sudo done
