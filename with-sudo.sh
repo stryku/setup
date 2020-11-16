@@ -74,6 +74,7 @@ apt install obs-studio -y
 
 
 # Spotify
+figlet Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
@@ -82,6 +83,7 @@ apt install spotify-client -y
 
 
 # Python 3.9
+figlet Python 3.9
 add-apt-repository ppa:deadsnakes/ppa -y
 apt update
 apt install -y \
@@ -95,6 +97,7 @@ python3.9 get-pip.py
 
 
 # Docker
+figlet Docker
 apt install -y \
     apt-transport-https
     ca-certificates
