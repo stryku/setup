@@ -4,9 +4,7 @@
 # virtualbox
 # docker
 # filezilla
-# remove firefox
 # VLC
-# Spotify
 
 # Fail on error
 set -e
