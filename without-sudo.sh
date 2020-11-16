@@ -15,8 +15,17 @@ chmod +x oh-my-zsh-install.sh
 ./oh-my-zsh-install.sh --skip-chsh
 
 
+# .dotfiles
 figlet dotfiles
 cp dotfiles/* ~/
+
+
+# Folders structure
+figlet folders
+mkdir -p \
+    ~/my/kp \
+    ~/my/programming \
+    ~/my/tmp
 
 
 figlet without-sudo done
