@@ -19,6 +19,7 @@ figlet without-sudo begin
 figlet setup Git
 
 git config --global core.pager cat
+git config --global core.editor vim
 git config --global user.email "$(decode \"fgelxh2393@tznvy.pbz\")"
 git config --global user.name "stryku"
 
