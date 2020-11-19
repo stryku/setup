@@ -100,10 +100,10 @@ python3.9 get-pip.py
 # Docker
 figlet Docker
 apt install -y \
-    apt-transport-https
-    ca-certificates
-    curl
-    gnupg-agent
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
     software-properties-common
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
