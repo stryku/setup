@@ -92,7 +92,7 @@ apt install -y \
     python3.9-venv \
     python3.9-dev \
 
-apt install python3-alsaaudio
+apt install python3-alsaaudio -y
 wget https://bootstrap.pypa.io/get-pip.py
 python3.9 get-pip.py
 
