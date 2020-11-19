@@ -72,7 +72,7 @@ PYCHARM_DIR=~/programs/pycharm
 mkdir -p $PYCHARM_DIR
 wget https://download.jetbrains.com/python/$PYCHARM_FILE
 tar -xzf $PYCHARM_FILE -C $PYCHARM_DIR
-echo "#\!/bin/bash \ncd ${PYCHARM_DIR}/${PYCHARM_NAME}/bin && ./pycharm.sh" > ~/bin/pycharm
+echo "#\!/bin/bash \ncd ${PYCHARM_DIR}/${PYCHARM_NAME}/bin && nohup ./pycharm.sh & " > ~/bin/pycharm
 chmod +x ~/bin/pycharm
 
 
