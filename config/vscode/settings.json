@@ -1,0 +1,10 @@
+{
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "window.zoomLevel": 1,
+    "python.venvFolders": [
+        "~/my/programming/py/venvs"
+    ],
+    "editor.renderWhitespace": "all",
+    "editor.formatOnSave": true
+}
