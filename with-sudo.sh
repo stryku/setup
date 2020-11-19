@@ -36,6 +36,7 @@ apt install -y \
     vlc \
     virtualbox \
     libasound2-dev \
+    usb-creator-gtk \
 
 
 # Setup Zsh
