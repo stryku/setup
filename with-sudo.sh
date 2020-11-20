@@ -40,7 +40,7 @@ apt install -y \
     build-essential \
     libncurses-dev \
     bison \
-    flex \ 
+    flex \
     libssl-dev \
     libelf-dev \
 
