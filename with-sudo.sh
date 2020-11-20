@@ -37,6 +37,12 @@ apt install -y \
     virtualbox \
     libasound2-dev \
     usb-creator-gtk \
+    build-essential \
+    libncurses-dev \
+    bison \
+    flex \ 
+    libssl-dev \
+    libelf-dev \
 
 
 # Setup Zsh
