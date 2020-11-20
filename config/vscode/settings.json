@@ -6,5 +6,17 @@
         "~/my/programming/py/venvs"
     ],
     "editor.renderWhitespace": "all",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/*.a": true,
+        "**/*.a.cmd": true,
+        "**/*.mod": true,
+        "**/*.mod.cmd": true,
+        "**/*.o": true,
+        "**/*.o.cmd": true,
+        "**/*.order": true,
+        "**/*.order.cmd": true
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.list.openMode": "doubleClick"
 }
