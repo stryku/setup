@@ -43,6 +43,8 @@ apt install -y \
     flex \
     libssl-dev \
     libelf-dev \
+    bless \
+    cmake \
 
 
 # Setup Zsh
