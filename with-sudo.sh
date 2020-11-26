@@ -45,6 +45,7 @@ apt install -y \
     libelf-dev \
     bless \
     cmake \
+    gparted \
 
 
 # Setup Zsh
