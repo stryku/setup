@@ -58,7 +58,8 @@ figlet Clone setup repo
 git clone https://github.com/stryku/setup
 
 figlet dotfiles
-cp setup/dotfiles/* ~/
+cp setup/dotfiles/.zshrc ~/.zshrc
+cp setup/dotfiles/.viminfo ~/.viminfo
 
 
 # Create bin dir
