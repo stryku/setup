@@ -28,8 +28,22 @@ function ngrep {
         echo $out
 }
 
+function createvenv {
+    python3.9 -m venv ~/my/programming/py/venvs/$1
+}
+
+function srcvenv {
+    source ~/my/programming/py/venvs/$1/bin/activate
+}
+
 export WORKON_HOME=~/my/programming/py/venvs
 
 export PATH=$PATH:~/bin
-export PATH=$PATH:~/bin/dziadzia
 export PATH=$PATH:~/bin/przepisy
+export PATH=$PATH:~/bin/db_books_sentences
+export PATH=$PATH:~/bin/db_life
+export PATH=$PATH:~/bin/db_receipt_pictures
+export PATH=$PATH:~/bin/db_receipts
+export PATH=$PATH:~/bin/db_voice_or_no_voice
+export PATH=$PATH:~/bin/dziadzia
+export PATH=$PATH:~/bin/voice_recorder

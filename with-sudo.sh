@@ -46,6 +46,7 @@ apt install -y \
     bless \
     cmake \
     gparted \
+    python3-dev \
 
 
 # Setup Zsh
