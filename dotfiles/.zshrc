@@ -7,6 +7,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+function srcvenv {
+	source "~/my/programming/py/venvs/${1}/bin/activate"
+}
+
+
 function cdtmp {
     cd $(mktemp -d)
 }
@@ -47,3 +52,5 @@ export PATH=$PATH:~/bin/db_receipts
 export PATH=$PATH:~/bin/db_voice_or_no_voice
 export PATH=$PATH:~/bin/dziadzia
 export PATH=$PATH:~/bin/voice_recorder
+export PATH=$PATH:~/bin/invoice_generator
+
