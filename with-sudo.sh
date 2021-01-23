@@ -47,6 +47,7 @@ apt install -y \
     cmake \
     gparted \
     python3-dev \
+    xclip \
 
 
 # Setup Zsh
